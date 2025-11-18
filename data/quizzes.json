@@ -1,0 +1,74 @@
+{
+  "quizzes": [
+    {
+      "id": 1,
+      "question": "JavaScriptで変数を宣言するキーワードは次のうちどれ?",
+      "options": ["let", "def", "var", "int"],
+      "correctAnswer": 0
+    },
+    {
+      "id": 2,
+      "question": "HTMLの正式名称は?",
+      "options": [
+        "Hyper Text Markup Language",
+        "High Tech Modern Language",
+        "Home Tool Markup Language",
+        "Hyperlinks and Text Markup Language"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 3,
+      "question": "CSSで文字の色を変えるプロパティは?",
+      "options": ["font-color", "text-color", "color", "background-color"],
+      "correctAnswer": 2
+    },
+    {
+      "id": 4,
+      "question": "次のうち、プログラミング言語でないものは?",
+      "options": ["Python", "Java", "HTML", "C++"],
+      "correctAnswer": 2
+    },
+    {
+      "id": 5,
+      "question": "JSONの正式名称は?",
+      "options": [
+        "JavaScript Object Notation",
+        "Java Standard Object Notation",
+        "JavaScript Oriented Network",
+        "Java Source Object Node"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 6,
+      "question": "配列の最後に要素を追加するメソッドは?",
+      "options": ["add()", "push()", "append()", "insert()"],
+      "correctAnswer": 1
+    },
+    {
+      "id": 7,
+      "question": "次のうち、ループ処理に使われないものは?",
+      "options": ["for", "while", "if", "forEach"],
+      "correctAnswer": 2
+    },
+    {
+      "id": 8,
+      "question": "真偽値を表すデータ型は?",
+      "options": ["boolean", "binary", "bit", "bool"],
+      "correctAnswer": 0
+    },
+    {
+      "id": 9,
+      "question": "JavaScriptでコメントを書く記号は?(単一行)",
+      "options": ["#", "//", "/*", "<!--"],
+      "correctAnswer": 1
+    },
+    {
+      "id": 10,
+      "question": "オブジェクトのプロパティにアクセスする記号は?",
+      "options": [":", ".", "->", "::"],
+      "correctAnswer": 1
+    }
+  ]
+}
