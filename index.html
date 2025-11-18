@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScriptクイズゲーム</title>
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#667eea">
+    
+    <!-- iOS Safari用 -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="クイズゲーム">
+    <link rel="apple-touch-icon" href="quiz_icon_192.png">
+    
+    <!-- Description -->
+    <meta name="description" content="JavaScriptとJSONをデータベースとして使用したシンプルなクイズゲーム">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>JavaScriptクイズゲーム</h1>
+        </header>
+
+        <!-- 問題画面 -->
+        <div id="quiz-screen" class="screen">
+            <div class="progress">
+                <p id="question-number">問題 1/10</p>
+            </div>
+
+            <div class="question-container">
+                <h2 id="question-text">問題文がここに表示されます</h2>
+            </div>
+
+            <div class="options-container" id="options-container">
+                <!-- 選択肢がJavaScriptで動的に生成されます -->
+            </div>
+
+            <div class="button-container">
+                <button id="answer-btn" class="btn btn-primary" disabled>回答する</button>
+            </div>
+
+            <div id="feedback" class="feedback hidden"></div>
+        </div>
+
+        <!-- 結果画面 -->
+        <div id="result-screen" class="screen hidden">
+            <div class="result-container">
+                <h2>お疲れ様でした!</h2>
+                <p class="result-message">あなたのスコア:</p>
+                <div class="score-display">
+                    <p id="score-text" class="score-text">10問中 0問正解</p>
+                    <p id="percentage-text" class="percentage-text">正解率: 0%</p>
+                </div>
+                <div class="button-container">
+                    <button id="retry-btn" class="btn btn-primary">再挑戦する</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- エラー画面 -->
+        <div id="error-screen" class="screen hidden">
+            <div class="error-container">
+                <h2>エラーが発生しました</h2>
+                <p id="error-message" class="error-message"></p>
+                <p class="error-hint">
+                    問題データ(data/quizzes.json)が正しく配置されているか確認してください。
+                </p>
+                                <div class="file-loader" style="margin-top:16px;">
+                                        <p style="margin-bottom:8px;color:#666;">ローカルの JSON ファイルを選択して読み込むこともできます:</p>
+                                        <input type="file" id="file-input" accept=".json,application/json">
+                                        <p style="margin-top:8px;font-size:0.9rem;color:#888;">推奨: data/quizzes.json を選択してください。</p>
+                                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    
+    <!-- Service Worker登録 -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then((registration) => {
+                        console.log('Service Worker registered successfully:', registration.scope);
+                    })
+                    .catch((error) => {
+                        console.log('Service Worker registration failed:', error);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>
